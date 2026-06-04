@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timeline Studio</title>
+    <meta
+      name="description"
+      content="An interactive timeline website for exploring milestones by era and category."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Timeline Studio home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Timeline Studio</span>
+        </a>
+        <div class="nav-actions">
+          <a href="#explore">Explore</a>
+          <a href="#insights">Insights</a>
+        </div>
+      </nav>
+
+      <section class="hero" id="top">
+        <img
+          class="hero-image"
+          src="assets/timeline-hero.png"
+          alt="Overhead arrangement of archival timeline materials and date pins."
+        >
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Interactive chronology</p>
+          <h1>Timeline Studio</h1>
+          <p class="hero-copy">
+            Explore a curated sequence of milestones, compare phases, and focus
+            the story by category without losing the big picture.
+          </p>
+          <div class="hero-stats" aria-label="Timeline summary">
+            <span><strong id="eventCount">0</strong> milestones</span>
+            <span><strong>1903-2026</strong> range</span>
+            <span><strong>4</strong> themes</span>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="workspace" id="explore" aria-labelledby="explore-title">
+        <div class="section-heading">
+          <p class="eyebrow">Explore</p>
+          <h2 id="explore-title">Milestones over time</h2>
+        </div>
+
+        <div class="toolbar" aria-label="Timeline controls">
+          <div class="search-wrap">
+            <label for="searchInput">Search timeline</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search people, places, or ideas"
+              autocomplete="off"
+            >
+          </div>
+          <div class="filter-group" aria-label="Filter by category">
+            <button class="filter is-active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="technology">Technology</button>
+            <button class="filter" type="button" data-filter="culture">Culture</button>
+            <button class="filter" type="button" data-filter="science">Science</button>
+            <button class="filter" type="button" data-filter="society">Society</button>
+          </div>
+        </div>
+
+        <div class="timeline-shell">
+          <aside class="detail-panel" aria-live="polite">
+            <p class="panel-label">Selected milestone</p>
+            <h3 id="detailTitle">Choose a milestone</h3>
+            <p id="detailDate">Use the timeline to inspect a moment.</p>
+            <p id="detailBody">
+              Events are arranged chronologically and can be narrowed by theme
+              or searched by keyword.
+            </p>
+            <div class="detail-meta">
+              <span id="detailCategory">Timeline</span>
+              <span id="detailImpact">Overview</span>
+            </div>
+          </aside>
+
+          <div class="timeline-wrap">
+            <div class="timeline-axis" aria-hidden="true"></div>
+            <ol class="timeline" id="timelineList"></ol>
+            <p class="empty-state" id="emptyState" hidden>No milestones match that view.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights" id="insights" aria-labelledby="insights-title">
+        <div class="section-heading">
+          <p class="eyebrow">Patterns</p>
+          <h2 id="insights-title">What the timeline reveals</h2>
+        </div>
+        <div class="insight-grid">
+          <article>
+            <span>01</span>
+            <h3>Acceleration</h3>
+            <p>Milestones compress as new tools make discovery, publishing, and collaboration faster.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Crossovers</h3>
+            <p>Culture, science, and society rarely move alone; the strongest moments connect domains.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Aftershocks</h3>
+            <p>The most important dates are often starting points, not endpoints, for larger change.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
